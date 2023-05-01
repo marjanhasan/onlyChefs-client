@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaToggleOn,
+  FaToggleOff,
+} from "react-icons/fa";
 
-const Header = () => {
+const Header = ({ toggleDarkMode, darkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="bg-gray-100 ">
+    <div className="">
       <div className="flex items-center justify-between relative px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         {/* logo section  */}
         <Link to="/" className="">
@@ -13,45 +19,63 @@ const Header = () => {
             onlyChefs
           </span>
         </Link>
-        {/* nav section  */}
-        <ul className="items-center hidden space-x-8 lg:flex font-medium">
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? "active" : "default")}
+        <div className="flex">
+          {darkMode ? (
+            <button
+              onClick={toggleDarkMode}
+              className="items-center hidden lg:flex"
             >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="statistic"
-              className={({ isActive }) => (isActive ? "active" : "default")}
+              <FaToggleOn className="text-2xl" />
+            </button>
+          ) : (
+            <button
+              onClick={toggleDarkMode}
+              className="items-center hidden lg:flex"
             >
-              Statistic
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="appliedjobs"
-              className={({ isActive }) => (isActive ? "active" : "default")}
-            >
-              Applied Jobs
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="blog"
-              className={({ isActive }) => (isActive ? "active" : "default")}
-            >
-              Blog
-            </NavLink>
-          </li>
-        </ul>
-        {/* button section  */}
-        <Link to="/statistic" className="hidden lg:flex">
-          <button className="btn">Start Applying</button>
-        </Link>
+              <FaToggleOff className="text-2xl" />
+            </button>
+          )}
+          {/* nav section  */}
+          <ul className="items-center hidden space-x-8 mx-4 lg:flex font-medium">
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="statistic"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Statistic
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="appliedjobs"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Applied Jobs
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="blog"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Blog
+              </NavLink>
+            </li>
+          </ul>
+          {/* button section  */}
+
+          <Link to="/statistic" className="hidden lg:flex">
+            <button className="btn">Start Applying</button>
+          </Link>
+        </div>
         {/* mobile navbar section  */}
         <div className="lg:hidden">
           {/* dropdown open button  */}
@@ -64,7 +88,11 @@ const Header = () => {
           </button>
           {isMenuOpen && (
             <div className="absolute top-0 left-0 w-full z-10">
-              <div className="p-5 bg-red-50 border rounded shadow-sm">
+              <div
+                className={`p-5  border rounded shadow-sm ${
+                  darkMode ? "dark" : "bg-white"
+                }`}
+              >
                 {/* logo & button section  */}
                 <div className="flex items-center justify-between mb-4">
                   <div>
@@ -75,7 +103,16 @@ const Header = () => {
                     </Link>
                   </div>
                   {/* dropdown menu close button  */}
-                  <div>
+                  <div className="flex gap-x-2">
+                    {darkMode ? (
+                      <button onClick={toggleDarkMode} className="">
+                        <FaToggleOn className="text-2xl" />
+                      </button>
+                    ) : (
+                      <button onClick={toggleDarkMode} className="">
+                        <FaToggleOff className="text-2xl" />
+                      </button>
+                    )}
                     <div>
                       <button
                         aria-label="Close Menu"
@@ -137,6 +174,7 @@ const Header = () => {
           )}
         </div>
       </div>
+      <hr className="bg-gray-50" />
     </div>
   );
 };

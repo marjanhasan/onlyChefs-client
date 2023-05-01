@@ -4,12 +4,13 @@ import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="bg-[#1A1919] py-16 mt-10">
+    <div className=" py-16 mt-10">
+      <hr className="bg-gray-50 mb-24" />
       <div className="my-container">
         <div className="grid md:grid-cols-5 gap-4">
           <div className="text-center md:text-left">
             <Link to="/" className="">
-              <span className=" text-2xl font-bold tracking-wide text-white">
+              <span className=" text-2xl font-bold tracking-wide">
                 onlyChefs
               </span>
             </Link>
