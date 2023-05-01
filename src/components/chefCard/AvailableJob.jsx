@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { MapPinIcon, CurrencyDollarIcon } from "@heroicons/react/24/solid";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const AvailableJob = ({ job }) => {
   const navigate = useNavigate();
@@ -31,11 +31,11 @@ const AvailableJob = ({ job }) => {
       </div>
       <div className="text-base text-gray-500 md:text-lg mt-1 break-all">
         <p className="flex">
-          <MapPinIcon className="w-5 mr-1" />
+          <FaFacebookF className="w-5 mr-1" />
           {location}
         </p>
         <p className="flex">
-          <CurrencyDollarIcon className="w-5 mr-1" />
+          <FaFacebookF className="w-5 mr-1" />
           {salary}
         </p>
       </div>

@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import { getShoppingCart } from "../utilities/fakedb";
 import { useLoaderData } from "react-router-dom";
-import {
-  MapPinIcon,
-  CurrencyDollarIcon,
-  ChevronDownIcon,
-} from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const AppliedJob = () => {
   const jobs = useLoaderData();
@@ -58,7 +54,7 @@ const AppliedJob = () => {
             className="inline-flex items-center h-12 px-6 mb-3 font-medium text-black bg-gray-100 rounded shadow-md  md:mb-0 cursor-pointer "
           >
             Filter By{" "}
-            <ChevronDownIcon
+            <FaFacebookF
               className={`w-5 ml-1 transition duration-300 ${
                 filter ? `rotate-180` : `rotate-0`
               }`}
@@ -107,11 +103,11 @@ const AppliedJob = () => {
                   </div>
                   <div className="text-base text-gray-500 md:text-lg mt-1 break-all">
                     <p className="flex">
-                      <MapPinIcon className="w-5 mr-1" />
+                      <FaFacebookF className="w-5 mr-1" />
                       {job.location}
                     </p>
                     <p className="flex">
-                      <CurrencyDollarIcon className="w-5 mr-1" />
+                      <FaFacebookF className="w-5 mr-1" />
                       {job.salary}
                     </p>
                   </div>

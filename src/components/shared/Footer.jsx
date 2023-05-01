@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -17,9 +18,15 @@ const Footer = () => {
               with hiring managers.
             </p>
             <div className="flex justify-center md:justify-start gap-2 mt-2">
-              <span className="h-6 w-6 lg:h-10 lg:w-10">FB</span>
-              <span className="h-6 w-6 lg:h-10 lg:w-10">TT</span>
-              <span className="h-6 w-6 lg:h-10 lg:w-10">IG</span>
+              <span className="h-6 w-6 lg:h-10 lg:w-10">
+                <FaFacebookF />
+              </span>
+              <span className="h-6 w-6 lg:h-10 lg:w-10">
+                <FaTwitter />
+              </span>
+              <span className="h-6 w-6 lg:h-10 lg:w-10">
+                <FaInstagram />
+              </span>
             </div>
           </div>
           <div className="flex flex-col items-center">

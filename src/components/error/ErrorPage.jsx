@@ -1,5 +1,5 @@
 import React from "react";
-import { FaceFrownIcon } from "@heroicons/react/24/solid";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import { Link, useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
@@ -8,7 +8,7 @@ const ErrorPage = () => {
     <>
       <section className="flex items-center h-screen p-16 bg-gray-100 text-gray-900">
         <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-          <FaceFrownIcon className="w-40 h-40 text-red-800 " />
+          <FaFacebookF className="w-40 h-40 text-red-800 " />
           <div className="max-w-md text-center">
             <h2 className="mb-8 font-extrabold text-9xl txt-color">
               <span className="sr-only">Error</span>
