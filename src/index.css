@@ -22,3 +22,6 @@
 .dark {
   @apply bg-gray-800 text-zinc-50;
 }
+.para {
+  @apply text-base text-gray-500 md:text-lg;
+}

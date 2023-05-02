@@ -15,8 +15,8 @@ const Header = ({ toggleDarkMode, darkMode }) => {
       <div className="flex items-center justify-between relative px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         {/* logo section  */}
         <Link to="/" className="">
-          <span className="ml-2 text-2xl font-bold tracking-wide txt-color">
-            onlyChefs
+          <span className="ml-2 text-2xl font-bold tracking-wide">
+            only<span className="text-yellow-400">Chefs</span>
           </span>
         </Link>
         <div className="flex">
@@ -97,8 +97,11 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <Link to="/" className="inline-flex items-center">
-                      <span className="ml-2 text-xl font-bold tracking-wide txt-color">
+                      {/* <span className="ml-2 text-xl font-bold tracking-wide txt-color">
                         onlyChefs
+                      </span> */}
+                      <span className="ml-2 text-2xl font-bold tracking-wide">
+                        only<span className="text-yellow-400">Chefs</span>
                       </span>
                     </Link>
                   </div>
