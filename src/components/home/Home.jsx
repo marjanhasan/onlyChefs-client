@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Chef from "../chefCard/Chef";
 import Explore from "../explore/explore";
+import Cuisines from "../cuisine/Cuisines";
 
 const Home = () => {
   const home = useLoaderData();
@@ -22,6 +23,8 @@ const Home = () => {
       <Chef chefs={chefs} />
       {/* explore chef section  */}
       <Explore />
+      {/* available cuisine section  */}
+      <Cuisines cuisine={cuisine} />
     </div>
   );
 };

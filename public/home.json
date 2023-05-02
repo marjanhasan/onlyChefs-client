@@ -262,8 +262,20 @@
     }
   ],
   "cuisine": [
-    { "photo_url": "https://example.com/japanese.jpg", "title": "Japanese" },
-    { "photo_url": "https://example.com/chinese.jpg", "title": "Thai" },
-    { "photo_url": "https://example.com/british.jpg", "title": "Italian" }
+    {
+      "id": 1,
+      "photo_url": "https://keviniscooking.com/wp-content/uploads/2019/06/Individual-Beef-Wellingtons-square-500x500.jpg",
+      "title": "Japanese"
+    },
+    {
+      "id": 2,
+      "photo_url": "https://keviniscooking.com/wp-content/uploads/2019/06/Individual-Beef-Wellingtons-square-500x500.jpg",
+      "title": "Thai"
+    },
+    {
+      "id": 3,
+      "photo_url": "https://keviniscooking.com/wp-content/uploads/2019/06/Individual-Beef-Wellingtons-square-500x500.jpg",
+      "title": "Italian"
+    }
   ]
 }
