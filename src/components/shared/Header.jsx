@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaToggleOn,
-  FaToggleOff,
-} from "react-icons/fa";
+import { FaTimesCircle, FaBars, FaToggleOn, FaToggleOff } from "react-icons/fa";
 
 const Header = ({ toggleDarkMode, darkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -84,7 +78,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
             title="Open Menu"
             onClick={() => setIsMenuOpen(true)}
           >
-            <FaFacebookF className="w-5 text-gray-600" />
+            <FaBars className=" text-gray-600" />
           </button>
           {isMenuOpen && (
             <div className="absolute top-0 left-0 w-full z-10">
@@ -97,16 +91,13 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <Link to="/" className="inline-flex items-center">
-                      {/* <span className="ml-2 text-xl font-bold tracking-wide txt-color">
-                        onlyChefs
-                      </span> */}
                       <span className="ml-2 text-2xl font-bold tracking-wide">
                         only<span className="text-lime-400">Chefs</span>
                       </span>
                     </Link>
                   </div>
                   {/* dropdown menu close button  */}
-                  <div className="flex gap-x-2">
+                  <div className="flex gap-x-2 items-center">
                     {darkMode ? (
                       <button onClick={toggleDarkMode} className="">
                         <FaToggleOn className="text-2xl" />
@@ -116,15 +107,13 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                         <FaToggleOff className="text-2xl" />
                       </button>
                     )}
-                    <div>
-                      <button
-                        aria-label="Close Menu"
-                        title="Close Menu"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        <FaFacebookF className="w-5 text-gray-600" />
-                      </button>
-                    </div>
+                    <button
+                      aria-label="Close Menu"
+                      title="Close Menu"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <FaTimesCircle className=" text-gray-600" />
+                    </button>
                   </div>
                 </div>
                 {/* mobile nav items section  */}

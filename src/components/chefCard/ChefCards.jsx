@@ -3,9 +3,8 @@ import React from "react";
 const ChefCards = ({ chef }) => {
   const { chef_img, chef_name, years_of_experience, num_recipes, num_likes } =
     chef;
-  console.log(chef);
   return (
-    <div className="border-2 border-lime-400 overflow-hidden rounded-md shadow-md shadow-current">
+    <div className=" overflow-hidden rounded-md shadow-md shadow-current">
       <div className="">
         <div className="w-full rounded-full">
           <img src={chef_img} alt="" className="w-full object-center" />
