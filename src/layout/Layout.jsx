@@ -11,7 +11,7 @@ const Layout = () => {
   return (
     <div
       className={`
-    ${darkMode ? "dark" : "bg-white"}`}
+    ${darkMode ? "dark" : "light"}`}
     >
       <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
       <Outlet />

@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <Link to="/" className="">
               <span className="text-2xl font-bold tracking-wide">
-                only<span className="text-yellow-400">Chefs</span>
+                only<span className="text-lime-400">Chefs</span>
               </span>
             </Link>
             <p className="text-base text-gray-500 md:text-lg mt-3 text-justify">
@@ -20,20 +20,20 @@ const Footer = () => {
               their signature recipes.
             </p>
             <div className="flex justify-center md:justify-start gap-2 mt-4">
-              <span className="p-4 bg-yellow-500 rounded-full text-center text-xl">
+              <span className="p-4 bg-lime-500 rounded-full text-center text-xl">
                 <FaFacebookF />
               </span>
-              <span className="p-4 bg-yellow-500 rounded-full text-center text-xl">
+              <span className="p-4 bg-lime-500 rounded-full text-center text-xl">
                 <FaTwitter />
               </span>
-              <span className="p-4 bg-yellow-500 rounded-full text-center text-xl">
+              <span className="p-4 bg-lime-500 rounded-full text-center text-xl">
                 <FaInstagram />
               </span>
             </div>
           </div>
           <div className="flex flex-col items-center">
             <div className="text-center md:text-left">
-              <h2 className="font-bold text-xl mb-3 text-white">Company</h2>
+              <h2 className="font-bold text-xl mb-3 ">Company</h2>
               <p className="text-base text-gray-500 md:text-lg">About Us</p>
               <p className="text-base text-gray-500 md:text-lg">Work</p>
               <p className="text-base text-gray-500 md:text-lg">Latest News</p>
@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col items-center">
             <div className="text-center md:text-left">
-              <h2 className="font-bold text-xl mb-3 text-white">Product</h2>
+              <h2 className="font-bold text-xl mb-3 ">Product</h2>
               <p className="text-base text-gray-500 md:text-lg">Prototype</p>
               <p className="text-base text-gray-500 md:text-lg">
                 Plans & Pricing
@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col items-center">
             <div className="text-center md:text-left">
-              <h2 className="font-bold text-xl mb-3 text-white">Support</h2>
+              <h2 className="font-bold text-xl mb-3 ">Support</h2>
               <p className="text-base text-gray-500 md:text-lg">Help Desk</p>
               <p className="text-base text-gray-500 md:text-lg">Sales</p>
               <p className="text-base text-gray-500 md:text-lg">
@@ -64,7 +64,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col items-center">
             <div className="text-center md:text-left">
-              <h2 className="font-bold text-xl mb-3 text-white">Contact</h2>
+              <h2 className="font-bold text-xl mb-3 ">Contact</h2>
               <p className="text-base text-gray-500 md:text-lg">
                 524 Broadway , NYC
               </p>

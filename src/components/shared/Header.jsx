@@ -16,7 +16,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
         {/* logo section  */}
         <Link to="/" className="">
           <span className="ml-2 text-2xl font-bold tracking-wide">
-            only<span className="text-yellow-400">Chefs</span>
+            only<span className="text-lime-400">Chefs</span>
           </span>
         </Link>
         <div className="flex">
@@ -101,7 +101,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                         onlyChefs
                       </span> */}
                       <span className="ml-2 text-2xl font-bold tracking-wide">
-                        only<span className="text-yellow-400">Chefs</span>
+                        only<span className="text-lime-400">Chefs</span>
                       </span>
                     </Link>
                   </div>
