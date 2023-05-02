@@ -20,7 +20,9 @@ const ChefCards = ({ chef }) => {
             <span>Likes: {num_likes}</span>
           </p>
         </div>
-        <button className="btn w-full rounded-none mt-3">View Recipes</button>
+        <button className="py-2 font-medium transition duration-200 bg-lime-500 hover:bg-lime-700 w-full mt-3">
+          View Recipes
+        </button>
       </div>
     </div>
   );

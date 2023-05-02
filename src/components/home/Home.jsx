@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Player } from "@lottiefiles/react-lottie-player";
 import { useLoaderData } from "react-router-dom";
 import Chef from "../chefCard/Chef";
+import Explore from "../explore/explore";
 
 const Home = () => {
   const home = useLoaderData();
@@ -15,11 +15,13 @@ const Home = () => {
             Explore Global Cuisine & Celebrity Chefs' Recipes
           </span>
         </h1>
-        <p className="para w-3/5 mx-auto break-words">{description}</p>
+        <p className="para w-3/5 mx-auto lg:text-center">{description}</p>
         <button className="btn my-6">Get Started</button>
       </div>
       {/* popular chefs section  */}
       <Chef chefs={chefs} />
+      {/* explore chef section  */}
+      <Explore />
     </div>
   );
 };
