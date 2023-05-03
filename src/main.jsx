@@ -11,6 +11,7 @@ import AuthProviders from "./providers/AuthProviders";
 import Login from "./components/login/login";
 import Register from "./components/login/Register";
 import FavChef from "./components/navRoutes/FavChef";
+import About from "./components/navRoutes/About";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "blog",
         element: <Blog />,
+      },
+      {
+        path: "about",
+        element: <About />,
       },
       {
         path: "favorite-chef",

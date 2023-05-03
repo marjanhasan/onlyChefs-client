@@ -55,6 +55,14 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                 Blog
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="about"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                About
+              </NavLink>
+            </li>
           </ul>
           {/* button section  */}
 
@@ -123,22 +131,22 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                     </li>
                     <li>
                       <NavLink
-                        to="statistic"
+                        to="blog"
                         className={({ isActive }) =>
                           isActive ? "active" : "default"
                         }
                       >
-                        Statistic
+                        Blog
                       </NavLink>
                     </li>
                     <li>
                       <NavLink
-                        to="appliedjobs"
+                        to="favorite-chef"
                         className={({ isActive }) =>
                           isActive ? "active" : "default"
                         }
                       >
-                        Applied Jobs
+                        Favorites
                       </NavLink>
                     </li>
                     <li>
@@ -149,6 +157,16 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                         }
                       >
                         Blog
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="about"
+                        className={({ isActive }) =>
+                          isActive ? "active" : "default"
+                        }
+                      >
+                        About
                       </NavLink>
                     </li>
                   </ul>
