@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaTimesCircle, FaBars, FaToggleOn, FaToggleOff } from "react-icons/fa";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const Header = ({ toggleDarkMode, darkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { currentUser, logOut, user } = useContext(AuthContext);
+  console.log(user?.photoURL);
   return (
     <div className="">
       <div className="flex items-center justify-between relative px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -66,9 +69,18 @@ const Header = ({ toggleDarkMode, darkMode }) => {
           </ul>
           {/* button section  */}
 
-          <Link to="/login" className="hidden lg:flex">
-            <button className="btn">Login</button>
-          </Link>
+          {user ? (
+            <div>
+              <img src={`${user?.photoURL}`} alt="" />
+              <button onClick={logOut} className="btn">
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link to="/login" className="hidden lg:flex">
+              <button className="btn">Login</button>
+            </Link>
+          )}
         </div>
         {/* mobile navbar section  */}
         <div className="lg:hidden">

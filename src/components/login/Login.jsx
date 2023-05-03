@@ -1,9 +1,127 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [password, setPassword] = useState("");
+  const [show, setShow] = useState(false);
+  const { signIn, signInWithGoogle, signInWithGitHub, setUser } =
+    useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || "/";
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    signIn(email, password)
+      .then((result) => {
+        setErrorMessage("");
+        const loggedUser = result.user;
+        navigate(from, { replace: true });
+        form.reset();
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
+      });
+  };
+  const handleEmail = (e) => {
+    const input = e.target.value;
+    setEmail(input);
+  };
+  const handlePassword = (e) => {
+    const input = e.target.value;
+    setPassword(input);
+  };
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        setErrorMessage("");
+        const loggedUser = result.user;
+        setUser(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
+      });
+  };
+  const handleGitHubSignIn = () => {
+    signInWithGitHub()
+      .then((result) => {
+        setErrorMessage("");
+        const loggedUser = result.user;
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
+      });
+  };
   return (
     <div>
-      <h1>login</h1>
+      <div className="title-body mt-4">
+        <h1 className="title">Login</h1>
+        <p className="para">
+          Explore Global Cuisine & Celebrity Chefs' Recipes
+        </p>
+      </div>
+      <form className="w-full max-w-sm mx-auto mb-5" onSubmit={handleSubmit}>
+        <div className="mb-4">
+          <label className="block font-bold mb-2" htmlFor="email">
+            Email
+          </label>
+          <input
+            className="input-field"
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+            required
+            value={email}
+            onChange={handleEmail}
+          />
+        </div>
+        <div className="mb-6">
+          <label className="block font-bold mb-2" htmlFor="password">
+            Password
+          </label>
+          <input
+            className="input-field"
+            id="password"
+            type={show ? "text" : "password"}
+            placeholder="Enter your password"
+            required
+            value={password}
+            onChange={handlePassword}
+          />
+          <p onClick={() => setShow(!show)}>
+            <small>
+              {show ? <span>Hide Password</span> : <span>Show Password</span>}
+            </small>
+          </p>
+        </div>
+        {errorMessage && <span className="text-red-500">{errorMessage}</span>}
+        <p className="mb-4">
+          Don't have account?{" "}
+          <Link to="/register" className="text-lime-600">
+            Please Register
+          </Link>
+        </p>
+        <button className="btn w-full" type="submit">
+          Login
+        </button>
+      </form>
+      <div className="w-full max-w-sm mx-auto mb-10">
+        <button onClick={handleGoogleSignIn} className="btn w-full">
+          Sign in with Google
+        </button>
+      </div>
+      <div className="w-full max-w-sm mx-auto mb-10">
+        <button onClick={handleGitHubSignIn} className="btn w-full">
+          Sign in with GitHub
+        </button>
+      </div>
     </div>
   );
 };

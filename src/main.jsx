@@ -12,6 +12,7 @@ import Login from "./components/login/login";
 import Register from "./components/login/Register";
 import FavChef from "./components/navRoutes/FavChef";
 import About from "./components/navRoutes/About";
+import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,12 @@ const router = createBrowserRouter([
         loader: () => fetch("https://only-chefs-server.vercel.app/"),
       },
       {
+        path: "/chef/:id",
+        element: <Home />,
+        loader: ({ params }) =>
+          fetch(`https://only-chefs-server.vercel.app/chef/${params.id}`),
+      },
+      {
         path: "blog",
         element: <Blog />,
       },
@@ -33,7 +40,11 @@ const router = createBrowserRouter([
       },
       {
         path: "favorite-chef",
-        element: <FavChef />,
+        element: (
+          <PrivateRoutes>
+            <FavChef />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/login",
