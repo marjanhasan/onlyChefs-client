@@ -7,6 +7,7 @@ import ErrorPage from "./components/error/ErrorPage";
 import Home from "./components/home/Home";
 import Blog from "./components/navRoutes/Blog";
 import LoadingSpinner from "./components/loader/LoadingSpinner";
+import AuthProviders from "./providers/AuthProviders";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,5 +31,7 @@ const router = createBrowserRouter([
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <AuthProviders>
+    <RouterProvider router={router} />
+  </AuthProviders>
 );
