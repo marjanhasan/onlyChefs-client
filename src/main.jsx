@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("/home.json"),
+        loader: () => fetch("https://only-chefs-server.vercel.app/"),
       },
       {
         path: "blog",
