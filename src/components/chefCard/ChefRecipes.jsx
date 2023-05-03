@@ -4,6 +4,7 @@ import ChefRecipeCards from "./ChefRecipeCards";
 
 const ChefRecipes = () => {
   const details = useLoaderData();
+  console.log(details);
   const {
     id,
     chef_img,
@@ -14,7 +15,6 @@ const ChefRecipes = () => {
     bio,
     recipes,
   } = details;
-  console.log(recipes.length);
   return (
     <div className="my-container">
       <div className="relative h-[70vh] w-full inline-block duration-500 overflow-hidden cursor-pointer">
@@ -34,7 +34,7 @@ const ChefRecipes = () => {
       </div>
       <div>
         {recipes.map((recipe, i) => (
-          <ChefRecipeCards key={i} recipe={recipe} />
+          <ChefRecipeCards key={i} recipe={recipe} id={id} />
         ))}
       </div>
     </div>

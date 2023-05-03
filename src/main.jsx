@@ -14,6 +14,8 @@ import FavChef from "./components/navRoutes/FavChef";
 import About from "./components/navRoutes/About";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 import ChefRecipes from "./components/chefCard/ChefRecipes";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,13 +25,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("https://only-chefs-server.vercel.app/"),
+        loader: () =>
+          fetch("https://only-chefs-server-marjanhasan.vercel.app/"),
       },
       {
         path: "/chef/:id",
         element: <ChefRecipes />,
         loader: ({ params }) =>
-          fetch(`https://only-chefs-server.vercel.app/chef/${params.id}`),
+          fetch(
+            `https://only-chefs-server-marjanhasan.vercel.app/chef/${params.id}`
+          ),
       },
       {
         path: "blog",
@@ -65,5 +70,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <AuthProviders>
     <RouterProvider router={router} />
+    <ToastContainer />
   </AuthProviders>
 );

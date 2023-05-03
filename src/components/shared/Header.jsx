@@ -70,8 +70,12 @@ const Header = ({ toggleDarkMode, darkMode }) => {
           {/* button section  */}
 
           {user ? (
-            <div>
-              <img src={`${user?.photoURL}`} alt="" />
+            <div className="flex items-center gap-4">
+              <img
+                className="h-16 w-16 rounded-full"
+                src={`${user?.photoURL}`}
+                alt=""
+              />
               <button onClick={logOut} className="btn">
                 Logout
               </button>
