@@ -46,7 +46,8 @@ const Explore = () => {
                 autoplay
                 speed={1.5}
                 loop
-                src="/src/assets/chef-dancing.json"
+                src="/chef-dancing.json"
+                className="rounded"
               ></Player>
             </div>
           </div>

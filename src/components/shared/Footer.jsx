@@ -14,7 +14,7 @@ const Footer = () => {
                 only<span className="text-lime-400">Chefs</span>
               </span>
             </Link>
-            <p className="text-base text-gray-500 md:text-lg mt-3 text-justify">
+            <p className="text-base text-gray-500 md:text-lg mt-3 break-all">
               Welcome to OnlyChef, your ultimate destination for exploring the
               world's best cuisine and discovering renowned celebrity chefs and
               their signature recipes.
