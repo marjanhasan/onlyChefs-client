@@ -1,8 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ChefCards = ({ chef }) => {
-  const { chef_img, chef_name, years_of_experience, num_recipes, num_likes } =
-    chef;
+  const {
+    chef_img,
+    chef_name,
+    years_of_experience,
+    num_recipes,
+    num_likes,
+    id,
+  } = chef;
   return (
     <div className=" overflow-hidden rounded-md shadow-md shadow-current">
       <div className="">
@@ -19,9 +26,11 @@ const ChefCards = ({ chef }) => {
             <span>Likes: {num_likes}</span>
           </p>
         </div>
-        <button className="py-2 font-medium transition duration-200 bg-lime-500 hover:bg-lime-700 w-full mt-3">
-          View Recipes
-        </button>
+        <Link to={`../chef/${id}`}>
+          <button className="py-2 font-medium transition duration-200 bg-lime-500 hover:bg-lime-700 w-full mt-3">
+            View Recipes
+          </button>
+        </Link>
       </div>
     </div>
   );
