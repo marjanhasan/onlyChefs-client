@@ -41,18 +41,10 @@ const Header = ({ toggleDarkMode, darkMode }) => {
             </li>
             <li>
               <NavLink
-                to="statistic"
+                to="favorite-chef"
                 className={({ isActive }) => (isActive ? "active" : "default")}
               >
-                Statistic
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="appliedjobs"
-                className={({ isActive }) => (isActive ? "active" : "default")}
-              >
-                Applied Jobs
+                Favorites
               </NavLink>
             </li>
             <li>
@@ -66,8 +58,8 @@ const Header = ({ toggleDarkMode, darkMode }) => {
           </ul>
           {/* button section  */}
 
-          <Link to="/statistic" className="hidden lg:flex">
-            <button className="btn">Start Applying</button>
+          <Link to="/login" className="hidden lg:flex">
+            <button className="btn">Login</button>
           </Link>
         </div>
         {/* mobile navbar section  */}

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import React from "react";
+import { Link, useLoaderData } from "react-router-dom";
 import Chef from "../chefCard/Chef";
 import Explore from "../explore/explore";
 import Cuisines from "../cuisine/Cuisines";
@@ -17,7 +17,11 @@ const Home = () => {
           </span>
         </h1>
         <p className="para w-3/5 mx-auto lg:text-center">{description}</p>
-        <button className="btn my-6">Get Started</button>
+        <div className="my-6">
+          <Link to="/register">
+            <button className="btn">Get Started</button>
+          </Link>
+        </div>
       </div>
       {/* popular chefs section  */}
       <Chef chefs={chefs} />

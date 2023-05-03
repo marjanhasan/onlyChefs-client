@@ -8,6 +8,9 @@ import Home from "./components/home/Home";
 import Blog from "./components/navRoutes/Blog";
 import LoadingSpinner from "./components/loader/LoadingSpinner";
 import AuthProviders from "./providers/AuthProviders";
+import Login from "./components/login/login";
+import Register from "./components/login/Register";
+import FavChef from "./components/navRoutes/FavChef";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +25,18 @@ const router = createBrowserRouter([
       {
         path: "blog",
         element: <Blog />,
+      },
+      {
+        path: "favorite-chef",
+        element: <FavChef />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
       {
         path: "loader",

@@ -31,11 +31,11 @@ const Explore = () => {
                 cooking tips exclusively on OnlyChef. Join our community of
                 foodies today and start cooking like a pro with OnlyChef.
               </p>
-              <Link to="/register" className="btn md:w-auto md:mr-4 mt-6">
-                <div className="inline-flex items-center justify-center w-full h-full">
-                  <p className="">Get Started</p>
-                </div>
-              </Link>
+              <div className="my-6 w-1/2 mx-auto lg:w-fit lg:mx-0">
+                <Link to="/register">
+                  <button className="btn w-full">Get Started</button>
+                </Link>
+              </div>
             </div>
           </div>
           {/* right side  */}
