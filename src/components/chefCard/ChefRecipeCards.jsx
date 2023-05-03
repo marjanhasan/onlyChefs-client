@@ -17,7 +17,7 @@ const ChefRecipeCards = ({ recipe }) => {
             Ratings: {rating}
           </p>
           <span className="font-medium text-lg mt-1">Ingredients:</span>
-          <ol className="md:flex gap-2 text-lg text-gray-500">
+          <ol className="md:flex gap-1 text-lg text-gray-500">
             {ingredients.map((ingredient, i) => (
               <li>
                 {i + 1}.{ingredient}

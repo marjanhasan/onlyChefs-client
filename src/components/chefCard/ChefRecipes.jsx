@@ -16,17 +16,23 @@ const ChefRecipes = () => {
   } = details;
   console.log(recipes.length);
   return (
-    <div>
-      <div className="title-body">
-        <h1 className="title">{chef_name}</h1>
-        <p className="para">
-          Explore Global Cuisine & Celebrity Chefs' Recipes
-        </p>
+    <div className="my-container">
+      <div className="relative h-[70vh] w-full inline-block duration-500 overflow-hidden cursor-pointer">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
+        <img src={chef_img} className="h-full w-full object-fill" />
+        <div className="absolute bottom-0 left-0 w-full p-4">
+          <h2 className="text-white text-3xl font-bold uppercase">
+            {chef_name}
+          </h2>
+          <p className="para">{bio}</p>
+          <div className="para flex gap-1 font-semibold md:mt-12">
+            <p>Recipes: {num_recipes}</p>
+            <p>Likes: {num_likes}</p>
+            <p>Experience: {years_of_experience} Years</p>
+          </div>
+        </div>
       </div>
       <div>
-        {/* {recipes.map((recipe, i) => (
-          <ChefRecipeCards key={i} recipe={recipe} />
-        ))} */}
         {recipes.map((recipe, i) => (
           <ChefRecipeCards key={i} recipe={recipe} />
         ))}
