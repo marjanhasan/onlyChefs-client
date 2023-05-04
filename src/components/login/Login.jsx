@@ -66,7 +66,6 @@ const Login = () => {
   };
   const handleResetPassword = (e) => {
     const em = emailRef.current.value;
-    console.log(em);
     if (!em) {
       toast("Input your email to reset password!");
     } else {
@@ -117,7 +116,7 @@ const Login = () => {
             onChange={handlePassword}
           />
           <p onClick={() => setShow(!show)}>
-            <small>
+            <small className="cursor-pointer text-lime-400">
               {show ? <span>Hide Password</span> : <span>Show Password</span>}
             </small>
           </p>

@@ -3,7 +3,6 @@ import { FaTrashAlt } from "react-icons/fa";
 import LazyLoad from "react-lazy-load";
 const FavChefCard = ({ singleData }) => {
   const { chefData, recipe } = singleData;
-  // console.log(chefData, recipe);
   return (
     <div className="my-container">
       <div className="w-full lg:w-1/2 flex items-center mx-auto mb-10 border-2 rounded-lg py-6">

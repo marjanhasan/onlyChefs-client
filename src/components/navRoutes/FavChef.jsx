@@ -14,8 +14,6 @@ const FavChef = () => {
     return { chefData, recipe };
   });
 
-  // console.log(similarData);
-
   return (
     <div className="mt-12">
       <div className="title-body">

@@ -4,7 +4,6 @@ import ChefRecipeCards from "./ChefRecipeCards";
 
 const ChefRecipes = () => {
   const details = useLoaderData();
-  // console.log(details);
   const {
     id,
     chef_img,

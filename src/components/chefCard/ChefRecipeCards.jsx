@@ -15,7 +15,6 @@ const ChefRecipeCards = ({ recipe, id }) => {
   useEffect(() => {
     let locals = getFromDb();
     locals.map((local) => {
-      // console.log(local);
       if (id == local.chef && recipe.id == local.recp) {
         setdisable(true);
       }
