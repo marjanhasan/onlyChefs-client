@@ -51,6 +51,8 @@ const router = createBrowserRouter([
             <FavChef />
           </PrivateRoutes>
         ),
+        loader: () =>
+          fetch("https://only-chefs-server-marjanhasan.vercel.app/"),
       },
       {
         path: "/login",
