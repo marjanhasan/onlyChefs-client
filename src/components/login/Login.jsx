@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
+import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -113,14 +114,26 @@ const Login = () => {
           Login
         </button>
       </form>
-      <div className="w-full max-w-sm mx-auto mb-10">
-        <button onClick={handleGoogleSignIn} className="btn w-full">
-          Sign in with Google
+      <div className=" max-w-fit mx-auto mb-5">
+        <button
+          onClick={handleGoogleSignIn}
+          className="inline-flex items-center justify-center h-12 mb-3 font-medium transition duration-200 rounded shadow-md  md:mb-0 bg-lime-500 hover:bg-lime-700 overflow-hidden"
+        >
+          <span className="mr-4 bg-gray-500 p-3">
+            <FaGoogle className=" text-2xl" />
+          </span>
+          <span className="pr-2">Sign in with Google</span>
         </button>
       </div>
-      <div className="w-full max-w-sm mx-auto mb-10">
-        <button onClick={handleGitHubSignIn} className="btn w-full">
-          Sign in with GitHub
+      <div className="max-w-fit mx-auto mb-10">
+        <button
+          onClick={handleGitHubSignIn}
+          className="inline-flex items-center justify-center h-12  mb-3 font-medium transition duration-200 rounded shadow-md  md:mb-0 bg-lime-500 hover:bg-lime-700 overflow-hidden"
+        >
+          <span className="mr-4 bg-gray-500 p-3">
+            <FaGithub className=" text-2xl" />
+          </span>
+          <span className="pr-2">Sign in with GitHub</span>
         </button>
       </div>
     </div>

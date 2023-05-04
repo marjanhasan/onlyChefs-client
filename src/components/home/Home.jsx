@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className="my-contaier">
       {/* banner section  */}
-      <BannerCarousel />
+      <BannerCarousel title={title} description={description} />
 
       {/* popular chefs section  */}
       <Chef chefs={chefs} />

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const ChefCards = ({ chef }) => {
+  const { user } = useContext(AuthContext);
   const {
     chef_img,
     chef_name,
@@ -26,7 +28,7 @@ const ChefCards = ({ chef }) => {
             <span>Likes: {num_likes}</span>
           </p>
         </div>
-        <Link to={`../chef/${id}`}>
+        <Link to={user ? `../chef/${id}` : "/login"}>
           <button className="py-2 font-medium transition duration-200 bg-lime-500 hover:bg-lime-700 w-full mt-3">
             View Recipes
           </button>

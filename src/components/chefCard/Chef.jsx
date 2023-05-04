@@ -3,7 +3,7 @@ import ChefCards from "./chefCards";
 
 const Chef = ({ chefs }) => {
   return (
-    <div className="my-12">
+    <div className="my-12 my-container">
       <div className="title-body">
         <h1 className="title">Popular Chefs</h1>
         <p className="para">

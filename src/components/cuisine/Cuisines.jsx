@@ -3,7 +3,7 @@ import CusineCards from "./CusineCards";
 
 const Cuisines = ({ cuisine }) => {
   return (
-    <div className="mt-6">
+    <div className="mt-6 my-container">
       <div className="title-body">
         <h2 className="title">Availabe Cuisine</h2>
         <p className="para">

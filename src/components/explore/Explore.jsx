@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Player } from "@lottiefiles/react-lottie-player";
 const Explore = () => {
   return (
-    <div className="">
+    <div className="my-container">
       <div className="title-body">
         <h2 className="title">Explore Celebrity Chefs</h2>
         <p className="para">
