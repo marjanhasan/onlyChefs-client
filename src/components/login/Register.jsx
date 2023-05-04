@@ -16,9 +16,11 @@ const Register = () => {
   const navigate = useNavigate();
   // const from = location.state?.from?.pathname || "/";
   const profile = {
-    displayName: name,
-    photoURL: photo,
+    displayName: "",
+    photoURL: "",
   };
+  // profile.displayName = ;
+  // profile.photoURL = ;
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -29,6 +31,14 @@ const Register = () => {
       e.target.password.focus();
       return;
     }
+    userProfile(name, photo)
+      .then(() => {
+        setErrorMessage("");
+        console.log("profile updated");
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
+      });
     createUser(email, password)
       .then((result) => {
         setErrorMessage("");
@@ -40,13 +50,7 @@ const Register = () => {
       .catch((error) => {
         setErrorMessage(error.message);
       });
-    userProfile(profile)
-      .then(() => {
-        setErrorMessage("");
-      })
-      .catch((error) => {
-        setErrorMessage(error.message);
-      });
+
     errorMessage || navigate("/login");
   };
   const handleEmail = (e) => {

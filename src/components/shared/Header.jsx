@@ -2,11 +2,13 @@ import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaTimesCircle, FaBars, FaToggleOn, FaToggleOff } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProviders";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 
 const Header = ({ toggleDarkMode, darkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { currentUser, logOut, user } = useContext(AuthContext);
-  console.log(user?.photoURL);
+  console.log(currentUser);
   return (
     <div className="">
       <div className="flex items-center justify-between relative px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -70,12 +72,15 @@ const Header = ({ toggleDarkMode, darkMode }) => {
           {/* button section  */}
 
           {user ? (
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 ">
               <img
-                className="h-16 w-16 rounded-full"
+                className="h-14 w-14 rounded-full"
                 src={`${user?.photoURL}`}
                 alt=""
+                data-tooltip-id="my-tooltip"
+                data-tooltip-content={user.displayName}
               />
+              <Tooltip id="my-tooltip" />
               <button onClick={logOut} className="btn">
                 Logout
               </button>

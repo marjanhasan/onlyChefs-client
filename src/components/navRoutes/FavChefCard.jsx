@@ -2,7 +2,7 @@ import React from "react";
 import { FaTrashAlt } from "react-icons/fa";
 const FavChefCard = ({ singleData }) => {
   const { chefData, recipe } = singleData;
-  console.log(chefData, recipe);
+  // console.log(chefData, recipe);
   return (
     <div className="my-container">
       <div className="w-full lg:w-1/2 flex items-center mx-auto mb-10 border-2 rounded-lg py-6">
