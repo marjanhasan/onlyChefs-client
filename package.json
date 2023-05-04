@@ -11,17 +11,18 @@
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.5.3",
+    "@react-pdf/renderer": "^3.1.9",
     "firebase": "^9.21.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
+    "react-lazy-load": "^4.0.1",
     "react-router-dom": "^6.11.0",
     "react-toastify": "^9.1.2",
     "react-tooltip": "^5.11.1",
-    "sort-by": "^1.2.0",
-    "swiper": "^9.2.4"
+    "sort-by": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

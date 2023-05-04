@@ -72,7 +72,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
           {/* button section  */}
 
           {user ? (
-            <div className="flex items-center gap-4 ">
+            <div className="hidden lg:flex items-center gap-4 ">
               <img
                 className="h-14 w-14 rounded-full"
                 src={`${user?.photoURL}`}
@@ -111,11 +111,21 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                 {/* logo & button section  */}
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <Link to="/" className="inline-flex items-center">
-                      <span className="ml-2 text-2xl font-bold tracking-wide">
-                        only<span className="text-lime-400">Chefs</span>
-                      </span>
-                    </Link>
+                    {user ? (
+                      <img
+                        className="h-14 w-14 rounded-full"
+                        src={`${user?.photoURL}`}
+                        alt=""
+                        data-tooltip-id="my-tooltip"
+                        data-tooltip-content={user.displayName}
+                      />
+                    ) : (
+                      <Link to="/" className="inline-flex items-center">
+                        <span className="ml-2 text-2xl font-bold tracking-wide">
+                          only<span className="text-lime-400">Chefs</span>
+                        </span>
+                      </Link>
+                    )}
                   </div>
                   {/* dropdown menu close button  */}
                   <div className="flex gap-x-2 items-center">
@@ -152,16 +162,6 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                     </li>
                     <li>
                       <NavLink
-                        to="blog"
-                        className={({ isActive }) =>
-                          isActive ? "active" : "default"
-                        }
-                      >
-                        Blog
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
                         to="favorite-chef"
                         className={({ isActive }) =>
                           isActive ? "active" : "default"
@@ -189,6 +189,13 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                       >
                         About
                       </NavLink>
+                    </li>
+                    <li>
+                      {user ? (
+                        <span onClick={logOut}>Logout</span>
+                      ) : (
+                        <Link to="/login">Login</Link>
+                      )}
                     </li>
                   </ul>
                 </nav>

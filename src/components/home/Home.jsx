@@ -4,6 +4,7 @@ import Chef from "../chefCard/Chef";
 import Explore from "../explore/explore";
 import Cuisines from "../cuisine/Cuisines";
 import BannerCarousel from "./BannerCarousel";
+import LazyLoad from "react-lazy-load";
 const Home = () => {
   const home = useLoaderData();
   const { title, description, chefs, cuisine } = home;

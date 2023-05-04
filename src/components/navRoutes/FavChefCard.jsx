@@ -1,18 +1,22 @@
 import React from "react";
 import { FaTrashAlt } from "react-icons/fa";
+import LazyLoad from "react-lazy-load";
 const FavChefCard = ({ singleData }) => {
   const { chefData, recipe } = singleData;
   // console.log(chefData, recipe);
   return (
     <div className="my-container">
       <div className="w-full lg:w-1/2 flex items-center mx-auto mb-10 border-2 rounded-lg py-6">
-        <div className="bg-gray-200 h-32 w-32 mx-8 rounded-lg ">
+        <LazyLoad
+          className="bg-gray-200 h-32 w-32 mx-8 rounded-lg "
+          threshold={0.95}
+        >
           <img
             className="h-full w-full rounded-lg"
             src={recipe.recipe_img}
             alt=""
           />
-        </div>
+        </LazyLoad>
         <div className="mt-3 grow">
           <h1 className="font-bold text-3xl">{recipe.recipe_name}</h1>
           <h2 className="font-medium text-lg mt-1">

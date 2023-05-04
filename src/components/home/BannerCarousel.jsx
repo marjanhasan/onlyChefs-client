@@ -11,7 +11,7 @@ const divStyles = {
 
 function BannerCarousel({ title, description }) {
   return (
-    <div style={divStyles} className="text-center max-w-7xl mx-auto">
+    <div style={divStyles} className="text-center ">
       <div className="bg-gradient-to-b from-transparent to-black flex items-center justify-center py-24">
         <div className="md:w-3/4 p-4">
           <h2 className="text-white text-3xl font-bold uppercase">
