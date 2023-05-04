@@ -29,14 +29,20 @@ const About = () => {
         <div className="mb-10 lg:mb-0">
           <div className="max-w-xl mb-6 lg:mt-8">
             <h2 className="max-w-lg mb-6 font-sans lg:text-5xl font-bold tracking-tight text-4xl sm:text-4xl sm:leading-none">
-              We take care of your healthy life
+              We take care of your Foodie life
             </h2>
             <p className="text-base text-gray-500 md:text-lg text-justify">
-              Our Hospital Management Website is your gateway to top-notch
-              healthcare services. With a compassionate and experienced team, we
-              are committed to providing innovative solutions that prioritize
-              your health and well-being.Trust us to be your partner in health
-              and start your journey towards optimal wellness today.
+              Welcome to OnlyChef, your ultimate destination for exploring the
+              world's best cuisine and discovering renowned celebrity chefs and
+              their signature recipes. Whether you're an aspiring home cook or a
+              seasoned culinary enthusiast, OnlyChef is your go-to source for
+              mouth-watering dishes from all corners of the globe. Browse our
+              extensive collection of recipes by country and uncover the secrets
+              behind some of the world's most popular dishes. Plus, get up close
+              and personal with the world's most acclaimed chefs, as they share
+              their favorite recipes and cooking tips exclusively on OnlyChef.
+              Join our community of foodies today and start cooking like a pro
+              with OnlyChef.
             </p>
             <Link to="/register" className="btn md:w-auto md:mr-4 mt-6">
               <div className="inline-flex items-center justify-center w-full h-full">

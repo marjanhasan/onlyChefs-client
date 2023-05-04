@@ -1,14 +1,16 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [password, setPassword] = useState("");
   const [show, setShow] = useState(false);
-  const { signIn, signInWithGoogle, signInWithGitHub, setUser } =
+  const emailRef = useRef();
+  const { signIn, signInWithGoogle, signInWithGitHub, setUser, resetUser } =
     useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -55,11 +57,27 @@ const Login = () => {
       .then((result) => {
         setErrorMessage("");
         const loggedUser = result.user;
+        setUser(loggedUser);
         navigate(from, { replace: true });
       })
       .catch((error) => {
         setErrorMessage(error.message);
       });
+  };
+  const handleResetPassword = (e) => {
+    const em = emailRef.current.value;
+    console.log(em);
+    if (!em) {
+      toast("Input your email to reset password!");
+    } else {
+      resetUser(em)
+        .then(() => {
+          toast("Please check your email!!");
+        })
+        .catch((err) => {
+          setErrorMessage(err.message);
+        });
+    }
   };
   return (
     <div>
@@ -78,6 +96,7 @@ const Login = () => {
             className="input-field"
             id="email"
             type="email"
+            ref={emailRef}
             placeholder="Enter your email"
             required
             value={email}
@@ -104,6 +123,12 @@ const Login = () => {
           </p>
         </div>
         {errorMessage && <span className="text-red-500">{errorMessage}</span>}
+        <p>
+          Forget Password?{" "}
+          <button className="text-lime-600" onClick={handleResetPassword}>
+            Click here
+          </button>
+        </p>
         <p className="mb-4">
           Don't have account?{" "}
           <Link to="/register" className="text-lime-600">

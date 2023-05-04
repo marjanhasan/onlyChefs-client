@@ -1,5 +1,5 @@
 import React from "react";
-import ChefCards from "./chefCards";
+import ChefCards from "./ChefCards";
 
 const Chef = ({ chefs }) => {
   return (

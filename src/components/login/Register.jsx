@@ -9,18 +9,9 @@ const Register = () => {
   const [passwordError, setPasswordError] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [photo, setPhoto] = useState("");
-  const [photoError, setPhotoError] = useState("");
   const { createUser, userProfile, user, logOut, setUser } =
     useContext(AuthContext);
-  const location = useLocation();
   const navigate = useNavigate();
-  // const from = location.state?.from?.pathname || "/";
-  const profile = {
-    displayName: "",
-    photoURL: "",
-  };
-  // profile.displayName = ;
-  // profile.photoURL = ;
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -31,20 +22,20 @@ const Register = () => {
       e.target.password.focus();
       return;
     }
-    userProfile(name, photo)
-      .then(() => {
-        setErrorMessage("");
-        console.log("profile updated");
-      })
-      .catch((error) => {
-        setErrorMessage(error.message);
-      });
     createUser(email, password)
       .then((result) => {
         setErrorMessage("");
         const loggedUser = result.user;
         setUser(loggedUser);
         form.reset();
+        userProfile(name, photo)
+          .then(() => {
+            console.log("hello");
+            setErrorMessage("");
+          })
+          .catch((error) => {
+            setErrorMessage(error.message);
+          });
         logOut();
       })
       .catch((error) => {
@@ -148,7 +139,6 @@ const Register = () => {
             onChange={(e) => setPhoto(e.target.value)}
           />
         </div>
-        {photoError && <span className="text-red-500">{photoError}</span>}
         <p className="mb-4">
           Already have an account?{" "}
           <Link to="/login" className="text-lime-600">

@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -18,7 +19,7 @@ const githubProvider = new GithubAuthProvider();
 const AuthProviders = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const currentUser = auth.currentUser;
+  const profile = auth.currentUser;
 
   // create user email/pass
   const createUser = (email, password) => {
@@ -28,7 +29,11 @@ const AuthProviders = ({ children }) => {
 
   // update user profile
   const userProfile = (name, photo) => {
-    return updateProfile(currentUser, { displayName: name, photoURL: photo });
+    setLoading(true);
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
   };
 
   // sign is with email/pass
@@ -49,6 +54,11 @@ const AuthProviders = ({ children }) => {
     return signInWithPopup(auth, githubProvider);
   };
 
+  const resetUser = (email) => {
+    setLoading(true);
+    return sendPasswordResetEmail(auth, email);
+  };
+
   //log out
   const logOut = () => {
     return signOut(auth);
@@ -56,8 +66,8 @@ const AuthProviders = ({ children }) => {
 
   // auth state changed
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
       setLoading(false);
     });
     return () => {
@@ -69,7 +79,6 @@ const AuthProviders = ({ children }) => {
   const authInfo = {
     user,
     setUser,
-    currentUser,
     loading,
     createUser,
     signIn,
@@ -77,6 +86,8 @@ const AuthProviders = ({ children }) => {
     signInWithGitHub,
     logOut,
     userProfile,
+    profile,
+    resetUser,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

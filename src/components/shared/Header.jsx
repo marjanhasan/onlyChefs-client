@@ -7,8 +7,7 @@ import { Tooltip } from "react-tooltip";
 
 const Header = ({ toggleDarkMode, darkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { currentUser, logOut, user } = useContext(AuthContext);
-  console.log(currentUser);
+  const { logOut, user, profile } = useContext(AuthContext);
   return (
     <div className="my-container">
       <div className="flex items-center justify-between relative px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -73,13 +72,15 @@ const Header = ({ toggleDarkMode, darkMode }) => {
 
           {user ? (
             <div className="hidden lg:flex items-center gap-4 ">
-              <img
-                className="h-14 w-14 rounded-full"
-                src={`${user?.photoURL}`}
-                alt=""
-                data-tooltip-id="my-tooltip"
-                data-tooltip-content={user.displayName}
-              />
+              <Link to="/profile">
+                <img
+                  className="h-14 w-14 rounded-full"
+                  src={`${user?.photoURL}`}
+                  alt=""
+                  data-tooltip-id="my-tooltip"
+                  data-tooltip-content={user.displayName}
+                />
+              </Link>
               <Tooltip id="my-tooltip" />
               <button onClick={logOut} className="btn">
                 Logout
@@ -112,13 +113,15 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     {user ? (
-                      <img
-                        className="h-14 w-14 rounded-full"
-                        src={`${user?.photoURL}`}
-                        alt=""
-                        data-tooltip-id="my-tooltip"
-                        data-tooltip-content={user.displayName}
-                      />
+                      <Link to="/profile">
+                        <img
+                          className="h-14 w-14 rounded-full"
+                          src={`${user?.photoURL}`}
+                          alt=""
+                          data-tooltip-id="my-tooltip"
+                          data-tooltip-content={user.displayName}
+                        />
+                      </Link>
                     ) : (
                       <Link to="/" className="inline-flex items-center">
                         <span className="ml-2 text-2xl font-bold tracking-wide">

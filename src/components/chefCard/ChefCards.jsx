@@ -16,7 +16,7 @@ const ChefCards = ({ chef }) => {
     <div className=" overflow-hidden rounded-md shadow-md shadow-current">
       <div className="">
         <div className="w-full rounded-full">
-          <img src={chef_img} alt="" className="w-full object-center" />
+          <img src={chef_img} alt="" className="w-full h-64 object-cover" />
         </div>
         <div className="pl-3">
           <h2 className="font-bold text-2xl mt-5">Name: {chef_name}</h2>
