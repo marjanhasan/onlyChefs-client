@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
-
+import LazyLoad from "react-lazy-load";
 const ChefCards = ({ chef }) => {
   const { user } = useContext(AuthContext);
   const {
@@ -16,7 +16,9 @@ const ChefCards = ({ chef }) => {
     <div className=" overflow-hidden rounded-md shadow-md shadow-current">
       <div className="">
         <div className="w-full rounded-full">
-          <img src={chef_img} alt="" className="w-full h-64 object-cover" />
+          <LazyLoad className="w-full h-64" threshold={0.95}>
+            <img src={chef_img} alt="" className="w-full h-full object-cover" />
+          </LazyLoad>
         </div>
         <div className="pl-3">
           <h2 className="font-bold text-2xl mt-5">Name: {chef_name}</h2>
